@@ -22,109 +22,109 @@ El resultado es un archivo pdf generado que contiene gráficos que muestran:
 
 Productos aportados en el dataset que se pueden consultar:
 
-Barley and products\n
-Stimulants\n
-Maize Germ Oil
-Grapefruit and products
-Pigmeat
-Grapes and products (excl wine)
-Groundnut Oil
-Alcoholic Beverages
-Cereals, Other
-Aquatic Plants
-Vegetables
-Meat, Other
-Milk - Excluding Butter
-Freshwater Fish
-Peas
-Butter, Ghee
-Crustaceans
-Beverages, Alcoholic
-Cottonseed Oil
-Apples and products
-Vegetable Oils
-Cream
-Sweet potatoes
-Rye and products
-Spices, Other
-Pelagic Fish
-Roots, Other
-Cocoa Beans and products
-Palm Oil
-Fish, Seafood
-Coconut Oil
-Oilcrops
-Meat
-Fish, Body Oil
-Soyabean Oil
-Plantains
-Bananas
-Lemons, Limes and products
-Oranges, Mandarines
-Sugar (Raw Equivalent)
-Coffee and products
-Sweeteners, Other
-Marine Fish, Other
-Soyabeans
-Honey
-Sunflowerseed Oil
-Pulses
-Cottonseed
-Sesameseed Oil
-Starchy Roots
-Vegetables, Other
-Mutton & Goat Meat
-Cassava and products
-Oilcrops, Other
-Cereals - Excluding Beer
-Animal fats
-Aquatic Animals, Others
-Sesame seed
-Sunflower seed
-Offals
-Wheat and products
-Bovine Meat
-Fats, Animals, Raw
-Tomatoes and products
-Olives (including preserved)
-Pineapples and products
-Beans
-Coconuts - Incl Copra
-Demersal Fish
-Cephalopods
-Spices
-Fruits - Excluding Wine
-Millet and products
-Onions
-Offals, Edible
-Aquatic Products, Other
-Maize and products
-Cloves
-Rape and Mustard Oil
-Sorghum and products
-Tea (including mate)
-Fruits, Other
-Dates
-Citrus, Other
-Treenuts
-Pepper
-Yams
-Olive Oil
-Pimento
-Oats
-Rice (Milled Equivalent)
-Groundnuts (Shelled Eq)
-Pulses, Other and products
-Oilcrops Oil, Other
-Fish, Liver Oil
-Potatoes and products
-Nuts and products
-Poultry Meat
-Beer
-Molluscs, Other
-Eggs
-Palmkernel Oil
-Beverages, Fermented
-Wine
-Rape and Mustardseed
-Sugar & Sweeteners
+- Barley and products
+- Stimulants
+- Maize Germ Oil
+- Grapefruit and products
+- Pigmeat
+- Grapes and products (excl wine)
+- Groundnut Oil
+- Alcoholic Beverages
+- Cereals, Other
+- Aquatic Plants
+- Vegetables
+- Meat, Other
+- Milk - Excluding Butter
+- Freshwater Fish
+- Peas
+- Butter, Ghee
+- Crustaceans
+- Beverages, Alcoholic
+- Cottonseed Oil
+- Apples and products
+- Vegetable Oils
+- Cream
+- Sweet potatoes
+- Rye and products
+- Spices, Other
+- Pelagic Fish
+- Roots, Other
+- Cocoa Beans and products
+- Palm Oil
+- Fish, Seafood
+- Coconut Oil
+- Oilcrops
+- Meat
+- Fish, Body Oil
+- Soyabean Oil
+- Plantains
+- Bananas
+- Lemons, Limes and products
+- Oranges, Mandarines
+- Sugar (Raw Equivalent)
+- Coffee and products
+- Sweeteners, Other
+- Marine Fish, Other
+- Soyabeans
+- Honey
+- Sunflowerseed Oil
+- Pulses
+- Cottonseed
+- Sesameseed Oil
+- Starchy Roots
+- Vegetables, Other
+- Mutton & Goat Meat
+- Cassava and products
+- Oilcrops, Other
+- Cereals - Excluding Beer
+- Animal fats
+- Aquatic Animals, Others
+- Sesame seed
+- Sunflower seed
+- Offals
+- Wheat and products
+- Bovine Meat
+- Fats, Animals, Raw
+- Tomatoes and products
+- Olives (including preserved)
+- Pineapples and products
+- Beans
+- Coconuts - Incl Copra
+- Demersal Fish
+- Cephalopods
+- Spices
+- Fruits - Excluding Wine
+- Millet and products
+- Onions
+- Offals, Edible
+- Aquatic Products, Other
+- Maize and products
+- Cloves
+- Rape and Mustard Oil
+- Sorghum and products
+- Tea (including mate)
+- Fruits, Other
+- Dates
+- Citrus, Other
+- Treenuts
+- Pepper
+- Yams
+- Olive Oil
+- Pimento
+- Oats
+- Rice (Milled Equivalent)
+- Groundnuts (Shelled Eq)
+- Pulses, Other and products
+- Oilcrops Oil, Other
+- Fish, Liver Oil
+- Potatoes and products
+- Nuts and products
+- Poultry Meat
+- Beer
+- Molluscs, Other
+- Eggs
+- Palmkernel Oil
+- Beverages, Fermented
+- Wine
+- Rape and Mustardseed
+- Sugar & Sweeteners
