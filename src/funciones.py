@@ -30,6 +30,17 @@ def extraeDatos(item,year):
     toneladas = list(data_filter[f"Y{year}"])
     return toneladas
 
+def extraeBonus(item,year):
+    global all_ton
+    year = int(year)
+    years = list(range(year,(year+10)))
+    all_ton = []
+    for ye in years:
+        bonus_filter = datasp[datasp["Item"] ==f"{item}"]
+        ton_bonus = list(bonus_filter[f"Y{ye}"])
+        all_ton.append(ton_bonus)
+    return all_ton
+
 def graficoDatos(item,year):
     data_filter = datasp[datasp["Item"] == f"{item}"]
     toneladas = list(data_filter[f"Y{year}"])
@@ -44,6 +55,19 @@ def graficoDatos(item,year):
     plt.savefig("graficodatos")
     print(f"{toneladas[0]}k tonnes Feed - {toneladas[1]}k tonnes Food")
 
+def graficoBonus(item,year):
+    year = int(year)
+    years = list(range(year,(year+10)))
+    col_food = []
+    col_feed = []
+    for ton in all_ton:
+        col_feed.append(ton[0])
+        col_food.append(ton[1])
+    grafic = pd.DataFrame(col_feed, index=years, columns=["Feed"])
+    grafic["Food"] = col_food
+    grafic.plot.bar(color = ['lightseagreen','hotpink'])
+    plt.title(f"Evolución de la producción en 10 años desde {year}")
+    plt.savefig("graficodatosbonus")
 
 def requestINEh(year):
     global resh
@@ -69,6 +93,18 @@ def requestINEm(year):
         raise ValueError("Bad Response")
     return resm.json()
 
+def requestINEtot(year):
+    year = int(year)
+    date = f"{year}0101:{year+10}1231"
+    codigo = "CP335"
+    url= f'http://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/{codigo}?date={date}'
+    print(f"Requesting data from {url}")
+    res = requests.get(url)
+    if res.status_code != 200:
+        print(res.text)
+        raise ValueError("Bad Response")
+    return res.json()
+
 def graficaPoblacion(homb,muj):
     global poblacionm
     global poblacionh
@@ -77,6 +113,7 @@ def graficaPoblacion(homb,muj):
         poblacionm = m['Valor']
     for h in homb['Data']:
         poblacionh = h['Valor']
+    total = poblacionh + poblacionm
     fig = plt.figure(u'Gráfica de barras') # Figure
     ax = fig.add_subplot(111) # Axes
     nombres = [f"Mujeres {poblacionm}",f"Hombres {poblacionh}"]
@@ -86,4 +123,19 @@ def graficaPoblacion(homb,muj):
     ax.bar(xx, datos, width=0.8, align='center',color= colors)
     ax.set_xticks(xx)
     ax.set_xticklabels(nombres)
+    plt.title(f"Total de población: {total} en {fecha}")
     plt.savefig("graficopoblacion")
+
+def graficaPoblacionBonus(pobltot):
+    poblaciones = []
+    years = []
+    for pers in pobltot['Data']:
+        if pers['FK_Periodo'] == 27:
+            poblaciones.append(pers['Valor'])
+    for pers in pobltot['Data']:
+        years.append(pers['Anyo'])
+    years = set(years)
+    graficbonus = pd.DataFrame(poblaciones, index=years, columns=["Poblacion"])
+    graficbonus.plot.bar(color = 'yellowgreen')
+    plt.title(f"Evolución de la población")
+    plt.savefig("graficopoblacionbonus")

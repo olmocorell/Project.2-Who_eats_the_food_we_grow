@@ -5,8 +5,6 @@ import json
 import requests
 import re
 import pandas as pd
-resm = ""
-
 
 fun.cargaDataSet()
 fun.filtraPais()
@@ -20,3 +18,10 @@ fun.graficoDatos(item,year)
 hombres = fun.requestINEh(year)
 mujeres = fun.requestINEm(year)
 fun.graficaPoblacion(mujeres,hombres)
+
+if year <2004:
+    fun.extraeBonus(item,year)
+    pobltot = fun.requestINEtot(year)
+    fun.graficaPoblacionBonus(pobltot)
+    fun.graficoBonus(item,year)
+
