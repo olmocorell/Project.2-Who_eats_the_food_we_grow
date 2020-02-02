@@ -7,6 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 lista = [17961,17962,17963,17964]
+toneladas = 0
 
 def cargaDataSet():
     global data
@@ -33,7 +34,10 @@ def extraeDatos(item,year):
 def extraeBonus(item,year):
     global all_ton
     year = int(year)
-    years = list(range(year,(year+10)))
+    if year < 2004:
+        years = list(range(year,(year+10)))
+    else:
+        years = list(range(year,2014))
     all_ton = []
     for ye in years:
         bonus_filter = datasp[datasp["Item"] ==f"{item}"]
@@ -44,6 +48,7 @@ def extraeBonus(item,year):
 def graficoDatos(item,year):
     data_filter = datasp[datasp["Item"] == f"{item}"]
     toneladas = list(data_filter[f"Y{year}"])
+    total = sum(toneladas)
     if len(toneladas) == 1:
         toneladas = [0] + list(data_filter[f"Y{year}"])
     labels = "Feed","Food"
@@ -51,13 +56,16 @@ def graficoDatos(item,year):
     explode = (0.1, 0) 
     plt.pie(toneladas, labels=labels,colors=colors,explode=explode,
     autopct='%1.1f%%', shadow=True, startangle=140)
-    plt.title(f"{item} en k toneladas en el año {year}")
+    plt.title(f"{item} {total}k t. en el año {year}")
     plt.savefig("graficodatos")
     print(f"{toneladas[0]}k tonnes Feed - {toneladas[1]}k tonnes Food")
 
 def graficoBonus(item,year):
     year = int(year)
-    years = list(range(year,(year+10)))
+    if year < 2004:
+        years = list(range(year,(year+10)))
+    else:
+        years = list(range(year,2014))
     col_food = []
     col_feed = []
     for ton in all_ton:
@@ -66,7 +74,7 @@ def graficoBonus(item,year):
     grafic = pd.DataFrame(col_feed, index=years, columns=["Feed"])
     grafic["Food"] = col_food
     grafic.plot.bar(color = ['lightseagreen','hotpink'])
-    plt.title(f"Evolución de la producción en 10 años desde {year}")
+    plt.title(f"Evolución de la producción desde {year}")
     plt.savefig("graficodatosbonus")
 
 def requestINEh(year):
@@ -95,7 +103,10 @@ def requestINEm(year):
 
 def requestINEtot(year):
     year = int(year)
-    date = f"{year}0101:{year+10}1231"
+    if year < 2004:
+        date = f"{year}0101:{year+10}1231"
+    else:
+        date = f"{year}0101:{2013}1231"
     codigo = "CP335"
     url= f'http://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/{codigo}?date={date}'
     print(f"Requesting data from {url}")
@@ -133,8 +144,8 @@ def graficaPoblacionBonus(pobltot):
         if pers['FK_Periodo'] == 27:
             poblaciones.append(pers['Valor'])
     for pers in pobltot['Data']:
-        years.append(pers['Anyo'])
-    years = set(years)
+        if pers['FK_Periodo'] == 27:
+            years.append(pers['Anyo'])
     graficbonus = pd.DataFrame(poblaciones, index=years, columns=["Poblacion"])
     graficbonus.plot.bar(color = 'yellowgreen')
     plt.title(f"Evolución de la población")
