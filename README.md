@@ -22,8 +22,8 @@ El resultado es un archivo pdf generado que contiene gráficos que muestran:
 
 Productos aportados en el dataset que se pueden consultar:
 
-Barley and products
-Stimulants
+Barley and products\n
+Stimulants\n
 Maize Germ Oil
 Grapefruit and products
 Pigmeat
