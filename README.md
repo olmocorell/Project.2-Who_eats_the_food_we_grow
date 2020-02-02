@@ -20,7 +20,7 @@ El resultado es un archivo pdf generado que contiene gráficos que muestran:
 - La evolución de la producción de ese producto en los 10 años siguientes.
 - Un gráfico de barras con el crecimiento de la población en los 10 años siguientes.
 
-Productos aportados en el dataset que se pueden consultar:
+### Productos aportados en el dataset que se pueden consultar:
 
 - Barley and products
 - Stimulants
