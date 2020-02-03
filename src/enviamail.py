@@ -18,7 +18,7 @@ def enviaMail():
     message['From'] = 'acorelldeveloper@gmail.com'
     message['To'] = 'agalvezcorell@gmail.com'
     serverSMTP = smtplib.SMTP('smtp.gmail.com',587)
-    
+    receptor = input(str("Introduce el e-mail donde quieres enviar el reporte: "))
     
     # PARA ENVIAR EL ARCHIVO ADJUNTO
     nombre_adjunto = "Reporte"
@@ -38,6 +38,6 @@ def enviaMail():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login('acorelldeveloper@gmail.com', f'{key}')
-    server.sendmail('acorelldeveloper@gmail.com', 'agalvezcorell@gmail.com', message.as_string())
+    server.sendmail('acorelldeveloper@gmail.com', f'{receptor}', message.as_string())
     server.quit()
     
