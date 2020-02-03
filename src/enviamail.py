@@ -40,3 +40,4 @@ def enviaMail():
     server.login('acorelldeveloper@gmail.com', f'{key}')
     server.sendmail('acorelldeveloper@gmail.com', 'agalvezcorell@gmail.com', message.as_string())
     server.quit()
+    
