@@ -24,7 +24,7 @@ Para ejecutar el programa, es necesario llamarlo desde la terminal de la siguien
 Y añadirle las flags con los argumentos a buscar: -i"Item" (siendo el producto) -y"año" (siendo el año)
 
 Ejemplo de ejecución: 
-~~python3 producto.py -i'Cereals, Other' -y1987~~
+python3 producto.py -i'Cereals, Other' -y1987
 
 Los años válidos son entre 1975 y 2013.
 
