@@ -154,3 +154,14 @@ def graficaPoblacionBonus(pobltot):
     graficbonus.plot.bar(color = 'yellowgreen')
     plt.title(f"Evolución de la población")
     plt.savefig("graficopoblacionbonus")
+
+def validMail(receptor):
+    while True:
+        regex = r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+        if(re.search(regex,receptor)):  
+            return receptor.lower()  
+            
+        else:  
+            show = "La dirección no es válida. Tienes el reporte en PDF en la carpeta del proyecto."
+            raise ValueError(show)
+        

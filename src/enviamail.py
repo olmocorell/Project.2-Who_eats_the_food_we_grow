@@ -4,6 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
+import src.funciones as fun
 import smtplib
 import os
 from dotenv import load_dotenv
@@ -19,7 +20,8 @@ def enviaMail():
     message['To'] = 'agalvezcorell@gmail.com'
     serverSMTP = smtplib.SMTP('smtp.gmail.com',587)
     receptor = input(str("Introduce el e-mail donde quieres enviar el reporte: "))
-    
+    fun.validMail(receptor)
+
     # PARA ENVIAR EL ARCHIVO ADJUNTO
     nombre_adjunto = "Reporte"
     archivo_adjunto = open("archivo.pdf", 'rb')
