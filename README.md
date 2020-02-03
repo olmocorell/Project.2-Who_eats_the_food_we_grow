@@ -19,6 +19,14 @@ El resultado es un archivo pdf generado que contiene gráficos que muestran:
 - La población en ese año en España y una división entre hombres y mujeres.
 - La evolución de la producción de ese producto en los 10 años siguientes.
 - Un gráfico de barras con el crecimiento de la población en los 10 años siguientes.
+### Ejemplo de ejecución del programa
+Para ejecutar el programa, es necesario llamarlo desde la terminal de la siguiente manera: python3 producto.py
+Y añadirle las flags con los argumentos a buscar: -i"Item" (siendo el producto) -y"año" (siendo el año)
+
+Ejemplo de ejecución: 
+python3 producto.py -i'Cereals, Other' -y1987
+
+Los años válidos son entre 1975 y 2013.
 
 ### Productos aportados en el dataset que se pueden consultar:
 
