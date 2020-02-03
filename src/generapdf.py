@@ -22,3 +22,4 @@ def creaPDF2():
     pdf2.image('graficodatosbonus.png',x=5, y=163, w=100)
     pdf2.image('graficopoblacionbonus.png', x=100, y=163,w=100)
     pdf2.output("archivo.pdf")
+    pdf2.output("src/reporteparaenviar.pdf", "F")
