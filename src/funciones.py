@@ -74,6 +74,8 @@ def graficoBonus(item,year):
     else:
         for ye in years:
             ton_bonus = list(bonus_filter[f"Y{ye}"])
+            col_feed.append(ton_bonus[0])
+            col_food.append(ton_bonus[1])
 
     grafic = pd.DataFrame(col_feed, index=years, columns=["Feed"])
     grafic["Food"] = col_food
