@@ -1,4 +1,4 @@
-![Foto_de_Frutas](https://github.com/agalvezcorell/Project.2-pipelines-project/blob/master/output/portada.jpg)
+![Foto_de_Frutas](https://github.com/agalvezcorell/Project.2-pipelines-project/blob/master/output/portada2.jpg)
 
 # ¿Quién se come lo que cultivamos?
 
