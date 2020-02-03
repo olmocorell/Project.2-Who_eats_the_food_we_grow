@@ -9,6 +9,8 @@ import datetime
 lista = [17961,17962,17963,17964]
 toneladas = 0
 
+
+
 def cargaDataSet():
     global data
     data = pd.read_csv("input/FAO.csv",encoding='cp1252')
@@ -31,20 +33,6 @@ def extraeDatos(item,year):
     toneladas = list(data_filter[f"Y{year}"])
     return toneladas
 
-def extraeBonus(item,year):
-    global all_ton
-    year = int(year)
-    if year < 2004:
-        years = list(range(year,(year+10)))
-    else:
-        years = list(range(year,2014))
-    all_ton = []
-    for ye in years:
-        bonus_filter = datasp[datasp["Item"] ==f"{item}"]
-        ton_bonus = list(bonus_filter[f"Y{ye}"])
-        all_ton.append(ton_bonus)
-    return all_ton
-
 def graficoDatos(item,year):
     data_filter = datasp[datasp["Item"] == f"{item}"]
     toneladas = list(data_filter[f"Y{year}"])
@@ -61,16 +49,33 @@ def graficoDatos(item,year):
     print(f"{toneladas[0]}k tonnes Feed - {toneladas[1]}k tonnes Food")
 
 def graficoBonus(item,year):
+    
+    col_food = []
+    col_feed = []
     year = int(year)
     if year < 2004:
         years = list(range(year,(year+10)))
     else:
         years = list(range(year,2014))
-    col_food = []
-    col_feed = []
-    for ton in all_ton:
-        col_feed.append(ton[0])
-        col_food.append(ton[1])
+    bonus_filter = datasp[datasp['Item']== f"{item}"]
+    if (len(bonus_filter)) == 1:
+        indice = bonus_filter.index[0]
+        if bonus_filter.Element[indice] == 'Food':
+            for ye in years:
+                ton_bonus = list(bonus_filter[f"Y{ye}"])
+                for ton in ton_bonus:
+                    col_food.append(ton)
+                    col_feed.append(0)
+        elif bonus_filter.Element[indice] == 'Feed':
+            for ye in years:
+                ton_bonus = list(bonus_filter[f"Y{ye}"])
+                for ton in ton_bonus:
+                    col_food.append()
+                    col_feed.append(ton)
+    else:
+        for ye in years:
+            ton_bonus = list(bonus_filter[f"Y{ye}"])
+
     grafic = pd.DataFrame(col_feed, index=years, columns=["Feed"])
     grafic["Food"] = col_food
     grafic.plot.bar(color = ['lightseagreen','hotpink'])
