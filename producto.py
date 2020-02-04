@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import argparse
-from subprocess import check_output
 import src.funciones as fun
 from src.generapdf import creaPDF2
 import src.enviamail as env

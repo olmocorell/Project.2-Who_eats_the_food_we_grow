@@ -37,7 +37,6 @@ def enviaMail():
     # Y finalmente lo agregamos al mensaje
     message.attach(adjunto_MIME)
     text = message.as_string()
-
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login('acorelldeveloper@gmail.com', f'{key}')

@@ -162,7 +162,6 @@ def validMail(receptor):
         regex = r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
         if(re.search(regex,receptor)):  
             return receptor.lower()  
-            
         else:  
             show = "La dirección no es válida. Tienes el reporte en PDF en la carpeta del proyecto."
             raise ValueError(show)
