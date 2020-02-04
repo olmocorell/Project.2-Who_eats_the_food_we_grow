@@ -3,10 +3,6 @@ import argparse
 from subprocess import check_output
 import src.funciones as fun
 from src.generapdf import creaPDF2
-import os
-import json
-import requests
-import pandas as pd
 import src.enviamail as env
 
 

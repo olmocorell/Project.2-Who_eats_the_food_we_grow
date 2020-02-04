@@ -33,13 +33,14 @@ def enviaMail():
     #Codificamos el objeto en BASE64
     encoders.encode_base64(adjunto_MIME)
     # Agregamos una cabecera al objeto
-    adjunto_MIME.add_header('Content-Disposition', "attachment; filename= %s" % nombre_adjunto)
+    adjunto_MIME.add_header('Content-Disposition', f"attachment; filename= {nombre_adjunto}.pdf",)
     # Y finalmente lo agregamos al mensaje
     message.attach(adjunto_MIME)
-    
+    text = message.as_string()
+
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login('acorelldeveloper@gmail.com', f'{key}')
-    server.sendmail('acorelldeveloper@gmail.com', f'{receptor}', message.as_string())
+    server.sendmail('acorelldeveloper@gmail.com', f'{receptor}', text)
     server.quit()
     
