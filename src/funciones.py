@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 import json
 import requests
-import re
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
@@ -157,12 +156,5 @@ def graficaPoblacionBonus(pobltot):
     plt.title(f"Evolución de la población")
     plt.savefig("graficopoblacionbonus")
 
-def validMail(receptor):
-    while True:
-        regex = r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
-        if(re.search(regex,receptor)):  
-            return receptor.lower()  
-        else:  
-            show = "La dirección no es válida. Tienes el reporte en PDF en la carpeta del proyecto."
-            raise ValueError(show)
+
         

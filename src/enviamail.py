@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import re
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
@@ -11,6 +11,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+def validMail(receptor):
+    while True:
+        regex = r'^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+        if(re.search(regex,receptor)):  
+            return receptor.lower()  
+        else:  
+            show = "La dirección no es válida. Tienes el reporte en PDF en la carpeta del proyecto."
+            raise ValueError(show)
+
 def enviaMail():
     #configurando correo
     key = os.getenv("pass")
@@ -18,9 +27,8 @@ def enviaMail():
     message['Subject'] = 'Reporte de producción de alimentos'
     message['From'] = 'acorelldeveloper@gmail.com'
     message['To'] = 'agalvezcorell@gmail.com'
-    serverSMTP = smtplib.SMTP('smtp.gmail.com',587)
     receptor = input(str("Introduce el e-mail donde quieres enviar el reporte: "))
-    fun.validMail(receptor)
+    validMail(receptor)
 
     # PARA ENVIAR EL ARCHIVO ADJUNTO
     nombre_adjunto = "Reporte"
