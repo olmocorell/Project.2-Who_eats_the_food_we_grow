@@ -21,7 +21,7 @@ def validMail(receptor):
             raise ValueError(show)
 
 def enviaMail():
-    #configurando correo
+    """configurando correo"""
     key = os.getenv("pass")
     message = MIMEMultipart('alternative')
     message['Subject'] = 'Reporte de producción de alimentos'

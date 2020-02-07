@@ -8,30 +8,31 @@ import datetime
 lista = [17961,17962,17963,17964]
 toneladas = 0
 
-
-def cargaDataSet():
-    global data
-    data = pd.read_csv("input/FAO.csv",encoding='cp1252')
-    return data
-
-def filtraPais():
-    global datasp
-    datasp = data[(data["Area"]== "Spain")]
-    return datasp
-
 def limpiaDataSet():
+    """
+    Limpia algunos registros que he detectado erróneos.
+    """
     global datasp
     for a in lista:
         datasp = datasp.drop(a)
     datasp = datasp.drop_duplicates()
 
 def extraeDatos(item,year):
+    """
+    Extrae la información del dataset en función del año
+    y el producto indicados por arpargse a la hora de iniciar
+    el programa.
+    """
     global toneladas
     data_filter = datasp[datasp["Item"] == f"{item}"]
     toneladas = list(data_filter[f"Y{year}"])
     return toneladas
 
 def graficoDatos(item,year):
+    """
+    Gráfico tipo pie que muestra la cantidad de alimentos feed
+    y food y sus porcentajes.
+    """
     data_filter = datasp[datasp["Item"] == f"{item}"]
     toneladas = list(data_filter[f"Y{year}"])
     total = sum(toneladas)
@@ -47,7 +48,10 @@ def graficoDatos(item,year):
     print(f"{toneladas[0]}k tonnes Feed - {toneladas[1]}k tonnes Food")
 
 def graficoBonus(item,year):
-    
+    """
+    Gráfico de barras comparando la producción del producto en feed/food
+    en los próximos 10 años al definido.
+    """
     col_food = []
     col_feed = []
     year = int(year)
