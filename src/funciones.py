@@ -8,6 +8,18 @@ import datetime
 lista = [17961,17962,17963,17964]
 toneladas = 0
 
+
+def cargaDataSet():
+    global data
+    data = pd.read_csv("input/FAO.csv",encoding='cp1252')
+    return data
+
+def filtraPais():
+    global datasp
+    datasp = data[(data["Area"]== "Spain")]
+    return datasp
+
+
 def limpiaDataSet():
     """
     Limpia algunos registros que he detectado erróneos.

@@ -9,7 +9,7 @@ def creaPDF2():
     pdf2.set_font('Courier', '',10)
     pdf2.cell(190, 10, 'Datos de la Organización de las Naciones Unidas para la Agricultura y la Alimentación','',1,'C')
     pdf2.text(10,110,'En los siguientes gráficos vemos la evolución de producción de producto y de población')
-    pdf2.image('portada2.jpg',x=50, y=30, w=100)
+    pdf2.image('output/portada2.jpg',x=50, y=30, w=100)
     pdf2.set_font('Courier', '',13)
     pdf2.text(55,73,'¿Quién se come lo que cultivamos?')
     pdf2.set_font('Courier', '',10)
